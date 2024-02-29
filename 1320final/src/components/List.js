@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 
 const List = (props) =>{
@@ -7,4 +7,4 @@ const List = (props) =>{
             <img src = {movie.Poster}></img>
         </div>)}
     )
-}
+}*/

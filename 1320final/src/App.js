@@ -1,34 +1,60 @@
-
+import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Recommmend from './Recommend';
-import List from './components/List';
-import Search from './Search';
-import { useState } from 'react';
-
-function App (){
-  const [movies, setMovies] = useState([]);
+import { useEffect, useState } from 'react';
+import Card from './Card';
+import Button from 'react-bootstrap/Button';
 
 
 
-  const getMovieRequest =  async () =>{
-    const url = "http://www.omdbapi.com/?s = star wars&apikey=a96e3cb2"
 
-    const response = await fetch(url)
-    const responseJson = await response.json();
+function App() {
+    const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=8d71ca6f81c3534fc992573c6aba6e23&language=en-US";
+    const [movies, setMovies] = useState([])
+    const API_SEARCH ="https://api.themoviedb.org/3/search/movie?api_key=8d71ca6f81c3534fc992573c6aba6e23&query=";
+    const [term, setTerm] = useState('')
+    useEffect(()=>{
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(data => setMovies(data.results))
+    },[])
 
-    console.log(responseJson);
-  }
-  return(
-      <div className='App'>
-              <Header />
-              <Recommmend />
-              <Search movies = {movies} />
-              <List />
-      </div>
-  )
+
+    console.log(movies);
+
+    
+    const handleSearch =(e)=>{
+        e.preventDefault()
+
+        fetch(API_SEARCH + term)
+        .then(res => res.json())
+        .then(data => {setMovies(data.results)})
+    }
+
+    
+  return (
+    <div>
+        <Header />
+        <div className="search">
+            <form onSubmit={handleSearch}>
+            <input  onChange={(e) => setTerm(e.target.value)}>
+            </input>
+            <button>Search</button>
+            </form>
+        </div>
+        <Recommmend />
+
+        <div className='movies'>
+            {movies.map((movie)=>(
+                <Card {...movie}/>
+            ))}
+        </div>
+        
+    </div>
+    
+
+  );
 }
-
-
 
 export default App;

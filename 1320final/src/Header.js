@@ -3,10 +3,11 @@ import './Header.css';
 
 function Header(){
     return(
-        <header className='headercontainer'>
+        <div className='header'>
             <i class="fa-solid fa-clapperboard fa-2x"></i>
             <h2 className='title'>Movie Cares</h2>
-        </header>
+            
+        </div>
     )
 }
 export default Header;
