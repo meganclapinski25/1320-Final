@@ -46,3 +46,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.footer{
+  padding: 100px;
+}

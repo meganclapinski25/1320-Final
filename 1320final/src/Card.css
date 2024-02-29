@@ -1,9 +1,44 @@
-.card{
-    width: 15rem;
-    margin-right:1.5rem;
-    margin-bottom: 1.5rem;
-}
-.poster img{
-    width: 15rem;
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
 }
 
+
+.card{
+    width: 10rem;
+    max-height: 20rem;
+    margin-right:1.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+.poster img{
+    width: 10rem;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    margin:0.5rem;
+}
+.description{
+    font-size: large;
+    color: black;
+    font-weight: bolder;
+}
+.descript{
+    transform: translateX(100%);
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow: auto;
+    padding: 10px;
+}
+.card:hover .descript{
+    transform: translateX(0%);
+    background-color: grey;
+}
