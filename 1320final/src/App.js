@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import Header from './Header';
+import Recommmend from './Recommend';
+import List from './components/List';
+import Search from './Search';
+import { useState } from 'react';
+
+function App (){
+  const [movies, setMovies] = useState([]);
+
+
+
+  const getMovieRequest =  async () =>{
+    const url = "http://www.omdbapi.com/?s = star wars&apikey=a96e3cb2"
+
+    const response = await fetch(url)
+    const responseJson = await response.json();
+
+    console.log(responseJson);
+  }
+  return(
+      <div className='App'>
+              <Header />
+              <Recommmend />
+              <Search movies = {movies} />
+              <List />
+      </div>
+  )
 }
+
+
 
 export default App;
