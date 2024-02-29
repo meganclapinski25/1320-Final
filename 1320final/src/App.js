@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Card from './Card';
 import Button from 'react-bootstrap/Button';
 import Added from './Added';
+import Footer from './Footer';
 
 
 
@@ -18,6 +19,11 @@ function App() {
     const handleAddMovie = (movie) => {
         setAddedMovies([...addedMovies, movie]);
     };
+    const handleDeleteMovie = (movieToDelete) => {
+        const updatedMovies = addedMovies.filter(movie => movie.id !== movieToDelete.id);
+        setAddedMovies(updatedMovies);
+    };
+    
 
     useEffect(()=>{
     fetch(API_URL)
@@ -54,17 +60,15 @@ function App() {
             {movies.map((movie)=>(
                 <Card {...movie} onAdd={() => handleAddMovie(movie)}/>
             ))}
+            
         </div>
         <div>
             
-            <Added addedMovies={addedMovies} />
+            <Added addedMovies={addedMovies} onDelete={handleDeleteMovie}/>
+            
 
         </div>
-        <div>
-            <footer>
-                <p>1320 Final</p>
-            </footer>
-        </div>
+        <Footer />
     </div>
         
     

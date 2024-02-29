@@ -1,5 +1,6 @@
 import React from "react";
 import './Card.css'
+import Button from 'react-bootstrap/Button';
 
 
 function Card(props){
@@ -26,7 +27,7 @@ const API_IMG = "https://image.tmdb.org/t/p/w500/";
                 </div>
                 
             </div>
-            <button onClick = {props.onAdd}>ADD</button>
+            <Button variant ="primary" onClick = {props.onAdd}>ADD</Button>{' '}
         </div>
     </div>
     )
