@@ -50,3 +50,6 @@
 .footer{
   padding: 100px;
 }
+.container{
+  overflow: auto;
+}

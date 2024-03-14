@@ -9,7 +9,7 @@ const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 
     return(
-     <div className="row">
+     
         <div className="cardContain">
 
             <div className="card">
@@ -29,7 +29,7 @@ const API_IMG = "https://image.tmdb.org/t/p/w500/";
             </div>
             <Button variant ="primary" onClick = {props.onAdd}>ADD</Button>{' '}
         </div>
-    </div>
+    
     )
 }
 export default Card;
