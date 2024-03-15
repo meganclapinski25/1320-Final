@@ -1,12 +1,11 @@
-.header{
-   background-color: grey; 
-   padding: 10px;
-   align-items: center;
-   justify-content: center;
-}
-
-
-
-.title{
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px; 
+    background-color: grey;
+  }
+  
+  .title {
     margin: 0;
-}
+  }

@@ -7,7 +7,7 @@ function Footer(){
 return(
     <div>
             <footer className='footer'>
-                <h3>1320 Final</h3>
+                <h3>Spring Intensive</h3>
             </footer>
         </div>
 )

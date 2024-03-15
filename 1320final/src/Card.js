@@ -2,8 +2,15 @@ import React from "react";
 import './Card.css'
 import Button from 'react-bootstrap/Button';
 
+import { Link } from 'react-router-dom'
+
+
+
+
 
 function Card(props){
+ 
+    
 
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
@@ -27,9 +34,14 @@ const API_IMG = "https://image.tmdb.org/t/p/w500/";
                 </div>
                 
             </div>
-            <Button variant ="primary" onClick = {props.onAdd}>ADD</Button>{' '}
+            <Button variant ="primary" onClick = {props.onAdd}>+</Button>{' '}
+            <Link to={`/MovieDetails/${props.id}`}>
+                <button className="btn btn-primary">
+                    Review
+                </button>
+            </Link>
         </div>
-    
+        
     )
 }
 export default Card;

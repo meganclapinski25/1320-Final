@@ -8,7 +8,7 @@ const Added = ({ addedMovies, onDelete }) => {
 
     return (
         <div>
-            <h2>Added Movies</h2>
+            <h2>Movies to Watch</h2>
             <div className='added-movies'>
                 {addedMovies.map((movie, index) => (
                     <div key={index}>

@@ -50,6 +50,19 @@
 .footer{
   padding: 100px;
 }
-.container{
-  overflow: auto;
+.moviesStyle {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
 }
+.form {
+  width: 25%; 
+}
+
+.form input {
+  width: 100%; 
+}
+
+
+

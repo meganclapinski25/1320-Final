@@ -1,0 +1,25 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .movie-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details {
+    margin-bottom: 20px;
+  }
+  
+  .movie-details p {
+    margin: 5px 0;
+  }
+  
+  .movie-poster {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
